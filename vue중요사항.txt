@@ -45,3 +45,16 @@ vue 프로젝트 만들기
 
   4. node 모듈 재설치. node_modules 폴더가 생성됨
     $ npm install
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+/*230115*/
+//import는 변수에 담는다
