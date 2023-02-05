@@ -46,6 +46,11 @@ const routes = [
     name: 'imageSlider',
     component: () => import('../views/ImageSliderView.vue'),
   },
+  {
+    path: '/4301',
+    name: '4301',
+    component: () => import('../views/Page4301View.vue'),
+  },
 ];
 
 const router = createRouter({
