@@ -88,12 +88,14 @@ export default {
          ...mapActions('모듈명', ['액션명1', '액션명2']),
       */
     checked(done) {
-      console.log(done.target);
-      debugger;
+      if (done) {
+        return 'checked';
+      } else {
+        return null; // class 속성을 만들지 마라.
+      }
     },
     doneToggle(id) {
-      console.log(id.target);
-      debugger;
+      this.$emit('doneToggle', id);
     },
     removeTodo(id) {
       console.log(id.target);

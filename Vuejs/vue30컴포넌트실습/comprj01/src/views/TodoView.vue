@@ -67,7 +67,6 @@ export default {
          ...mapActions('모듈명', ['액션명1', '액션명2']),
       */
     clearAll() {
-      debugger;
       //todoItems = [];
       this.$data.todoItems = []; // 리스트 삭제
     },
@@ -75,8 +74,9 @@ export default {
       console.log(e.target);
       debugger;
     },
-    doneToggle(e) {
-      console.log(e.target);
+    doneToggle(id) {
+      //자식과 같아야함 e는 x안됨
+      console.log(id.target);
       debugger;
     },
     removeTodo(e) {
