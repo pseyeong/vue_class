@@ -9,7 +9,7 @@ module.exports = {
     jest: true,
   },
   extends: [
-    'plugin:vue/essential',
+    'plugin:vue/vue3-essential',
     'eslint:recommended',
     'plugin:prettier/recommended',
   ],
