@@ -55,7 +55,7 @@ li.checked {
         <span
           class="removeBtn"
           type="button"
-          v-on:click="removeTodo(todoItem.id)"
+          v-on:click.stop="removeTodo(todoItem.id)"
         >
           <i class="far fa-trash-alt" aria-hidden="true"></i>
         </span>
@@ -95,6 +95,11 @@ export default {
       console.log(id);
       // 부모 컴포넌트에 이벤트를 발생
       this.$emit('removeTodo', id);
+
+      //템플릿에 v-on:click.stop 수식자 추가와 동일
+      // //click 이벤트 버블링 막기 => 이벤트 취소
+      // window.event.stopPropagation();
+      // event.preventDefault(); // 앞에 window 생략
     },
   },
   components: {
