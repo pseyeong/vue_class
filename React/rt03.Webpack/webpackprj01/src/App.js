@@ -10,7 +10,7 @@ function App({ ...props }) {
     <div>
       <Header></Header>
       <section id="page1" data-role="page">
-        <div class="content" data-role="content">
+        <div className="content" data-role="content">
           컨텐츠
         </div>
       </section>
@@ -20,3 +20,5 @@ function App({ ...props }) {
 }
 
 export default React.memo(App);
+//class는 예약어라서 className으로 써야함
+//html이 아니라 자바스크립트로 봐야함
