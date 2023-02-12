@@ -119,34 +119,35 @@ input:focus {
 </template>
 
 <script>
-// vuex 라이브러리에서 mapActions, mapMutations, mapState, mapGetters 함를 가져옵니다.
-// import { mapActions, mapMutations, mapState, mapGetters } from 'vuex';
-
 export default {
   /* pdtmc^2w */
   props: [],
   data() {
     /* 컴포넌트 안에서 사용되는 변수 등록. 개별 변수 */
     return {
-      newTodoItem: null,
+      newTodoItem: null /* 입력된 값 */,
       showModal: false,
     };
   },
-  //template: ``,
   methods: {
     /* 이벤트 핸들러 등록 + 일반 함수 */
-    /* vuex 를 사용하는 경우
-      mapActions 는 store의 actions 를 가져오는 헬퍼 메서드입니다.
-      namespaced: true를 설정한 경우 네임스페이스를 사용하기 때문에 store의 모듈 명을 적어주어야 합니다.
-      store 모듈에서 actions 를 가져오는 2가지 방식
-      1) store.모듈명.actions 이름 바꾸어 사용하기(추천방식)
-         ...mapActions('모듈명', { dispatch액션명1: '액션명1', dispatch액션명2: '액션명2' }),
-      2) store.모듈명.actions 이름 그대로 사용하기
-         ...mapActions('모듈명', ['액션명1', '액션명2']),
-      */
     addTodo(e) {
       console.log(e.target);
-      debugger;
+
+      // 1. 확인 emit 부모 자식 연결이 되는지 확인
+      // 2. addTodo 기능 완성.
+      //   2-1. newTodoItem 이 빈값인 경우 넘기지 않도록 코딩.
+      //        null 이 아니고
+      //        undefined 아니고
+      //        빈 문자열이 아니고
+      //        공백이 아니고
+      //   2-2. TodoInput 컴포넌트의 input 태그에 값을 초기화
+      if (this.$data.newTodoItem && this.$data.newTodoItem.trim() != '') {
+        this.$emit('addTodo', this.$data.newTodoItem); // 부모 컴포넌트 이벤트 발생
+
+        //input 태그에 값을 초기화
+        this.$data.newTodoItem = '';
+      }
     },
   },
   components: {

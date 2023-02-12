@@ -73,33 +73,28 @@ export default {
   props: ['todoItems'],
   data() {
     /* 컴포넌트 안에서 사용되는 변수 등록. 개별 변수 */
-    return {};
+    return {
+      // todoItems: [],
+    };
   },
   //template: ``,
   methods: {
     /* 이벤트 핸들러 등록 + 일반 함수 */
-    /* vuex 를 사용하는 경우
-      mapActions 는 store의 actions 를 가져오는 헬퍼 메서드입니다.
-      namespaced: true를 설정한 경우 네임스페이스를 사용하기 때문에 store의 모듈 명을 적어주어야 합니다.
-      store 모듈에서 actions 를 가져오는 2가지 방식
-      1) store.모듈명.actions 이름 바꾸어 사용하기(추천방식)
-         ...mapActions('모듈명', { dispatch액션명1: '액션명1', dispatch액션명2: '액션명2' }),
-      2) store.모듈명.actions 이름 그대로 사용하기
-         ...mapActions('모듈명', ['액션명1', '액션명2']),
-      */
     checked(done) {
-      if (done) {
-        return 'checked';
-      } else {
-        return null; // class 속성을 만들지 마라.
-      }
+      console.log(done);
+      // debugger;
+      if (done) return 'checked';
+      else return null; // class 속성을 만들지 마라.
     },
     doneToggle(id) {
+      console.log(id);
+      // 부모 컴포넌트에 이벤트 발산
       this.$emit('doneToggle', id);
     },
     removeTodo(id) {
-      console.log(id.target);
-      debugger;
+      console.log(id);
+      // 부모 컴포넌트에 이벤트를 발생
+      this.$emit('removeTodo', id);
     },
   },
   components: {
