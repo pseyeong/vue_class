@@ -18,25 +18,20 @@
         이터러블(iterable) 객체에는 Array, String, Map, Set 등이 있다.
         iterator를 생성해서 next()로 순회할 수 있는 자료구조가 이터러블
 
-
-    바구니(배열, 객체, 문자(잘사용x))에 넣는거 spread 빼는거 rest
-
 */
-
 const cities = ['서울', '부산', '제주'];
-console.log(cities[0], cities[1], cities[2]);
-console.log(...cities);
+console.log(cities[0], cities[1], cities[2]); // '서울', '부산', '제주'
+
+console.log(...cities); // '서울', '부산', '제주'
 
 const east = ['U', 'K', 'T'];
 const west = ['N', 'C', 'G'];
 
-//east와 west 를 결합하여 countries 배열을 만드시오
-//원본 east 가 바뀜
-const countries = east.concat(west); // 기존
+// east 와 west 를 결합하여  countries 배열을 만드시오
+const countries = east.concat(west); // "U", "K", "T", "N", "C", "G"
 
-console.log(countries);
-//east와 west 를 결합하여 countries1 배열을 만드시오. spread 연산자 사용
-//spread 연산자는 새로운 배열이나 객체를 만들 때 주로 사용한다.
-//원본 east가 바뀌지 않음
+// east 와 west 를 결합하여  countries1 배열을 만드시오.
+// spread 연산자 사용하여
+// spread 연산자 는 새로운 배열이나 객체를 만들 때 주로 사용된다
 const countries1 = [...east, ...west];
-console.log(countries1);
+console.log(countries1); // ["U", "K", "T", "N", "C", "G"]

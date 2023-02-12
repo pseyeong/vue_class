@@ -6,5 +6,5 @@ var getMessage = function getMessage(params) {
   console.log("Hello ".concat(params));
 };
 getMessage('sejoong');
-var str = "aaaa";
+var str = 'aaaa';
 console.log(str);
