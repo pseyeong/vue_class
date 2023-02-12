@@ -12,3 +12,14 @@
     rest 연산자(...)를 사용하여 함수의 매개변수를 작성한 형태다.
     함수의 매개변수로 넘어오는 값들을 "배열"로 만든다.
 */
+
+function func3(...args) {
+  var [first, ...others] = args;
+
+  console.log('func3 >>', first); //1
+  console.log('func3 >>', others); //2,3,4,0
+}
+
+func3(1, 2, 3, 4, 0);
+
+//...others에서 ...은 rest 연산자, others는 배열
