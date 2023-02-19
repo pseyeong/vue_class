@@ -86,14 +86,14 @@
 
     // JSX로 화면 만들기. 조건부 렌더링: https://ko.reactjs.org/docs/conditional-rendering.html
     return (
-      <div>
-        HelloWorldContainer
+      //Fragment => 감싸고 있는 부모태그를 삭제할 수 있다
+      <Fragment>
         {변수명.map((value, index, array) => {
           return (<HelloWorld index={value}></HelloWorld>);
         })
         }
 
-      </div>
+      </Fragment>
     )
   }
 
